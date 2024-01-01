@@ -4,7 +4,8 @@ from django.template import loader
 from members.models import Member
 # Create your views here.
 
-
+def main(request):
+    return HttpResponse(loader.get_template('main.html').render())
 
 def members(request):
     template = loader.get_template('all_members.html')
@@ -21,4 +22,9 @@ def details(request, id):
     }
     return HttpResponse(template.render(context, request))
 
-
+def testing(request):
+    context = {
+        'fruits' : ['apple', 'banana', 'orange', 'watermelon'],
+    }
+    return HttpResponse(loader.get_template('testing.html').render(context, request))
+    
