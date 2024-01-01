@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+	testing 
+{% endblock %}
+
+
+{% block content %}
+	<ul>
+		{% for i in fruits %}
+		<li> {{ i }} </li>
+		{% endfor %}
+	</ul>
+{% endblock %}
